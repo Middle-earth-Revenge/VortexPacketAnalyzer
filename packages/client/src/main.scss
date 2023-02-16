@@ -1,0 +1,132 @@
+.text-transform-none {
+  text-transform: none;
+}
+
+.text-transform-uppercase {
+  text-transform: uppercase;
+}
+
+table.packetData {
+  text-transform: uppercase;
+  font-family: monospace;
+  width: auto;
+
+  th,
+  td {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  td {
+    width: 1em;
+    /** Some Firefox bug */
+    border: 0px solid var(--background-color);
+  }
+
+  thead>tr>th {
+    border-bottom: 1px solid var(--background-color);
+  }
+
+  th[scope='row'] {
+    width: 0px;
+    border-bottom: 1px solid var(--background-color);
+  }
+}
+
+table.packet {
+  text-transform: uppercase;
+  font-family: monospace;
+
+  th {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  th[scope='col'] {
+    text-align: center;
+  }
+
+  td {
+    -webkit-user-select: text;
+    user-select: text;
+    text-align: center;
+
+    /** Some Firefox bug */
+    border: 0px solid var(--background-color);
+  }
+
+  tr {
+    border-bottom: var(--border-width) solid var(--table-border-color);
+  }
+
+  td,
+  th {
+    border-bottom: none;
+  }
+
+  tr>td:first-of-type {
+    border-left: var(--border-width) solid var(--table-border-color);
+  }
+
+  .selected {
+    outline: 1px dashed gray;
+    outline-offset: -0.25rem;
+  }
+}
+
+table.packets {
+  td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 30rem;
+    white-space: nowrap;
+  }
+}
+
+.file-drop-target {
+  border: var(--border-width) dashed var(--contrast);
+  margin: var(--block-spacing-vertical) 0;
+  padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
+}
+
+.file-drop-dragging-over-target {
+  border: var(--border-width) dashed var(--form-element-valid-focus-color);
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  dialog article {
+    max-width: 992px;
+  }
+}
+
+.byteRange {
+  mix-blend-mode: difference;
+  color: white;
+  cursor: pointer;
+}
+
+.col.error {
+  padding-bottom: var(--spacing);
+  margin-top: calc(var(--spacing) * -1);
+  color: var(--form-element-invalid-border-color);
+}
+
+.byteRanges details {
+  padding: var(--spacing);
+}
+
+.byteRanges details summary,
+p {
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.warning {
+  border-color: var(--del-color);
+  color: var(--del-color);
+}

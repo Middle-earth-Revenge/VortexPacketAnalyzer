@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:react/jsx-runtime"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/scripts/*"
+      ],
+      "rules": {
+        "no-console": "off",
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true
+          }
+        ]
+      }
+    }
+  ],
+  "rules": {
+    "jsx-a11y/anchor-has-content": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-restricted-syntax": "off"
+  }
+}

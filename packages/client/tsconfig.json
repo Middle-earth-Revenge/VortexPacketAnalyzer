@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.root.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "jsx": "react-jsx",
+    "rootDir": "src",
+    "composite": true
+  },
+  "include": [
+    "./src/**/*.d.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "@ebay/nice-modal-react": "^1.2.8",
+    "@picocss/pico": "^1.5.7",
+    "bootstrap": "^5.2.3",
+    "classnames": "^2.3.2",
+    "nanoid": "^4.0.0",
+    "raviger": "^4.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-file-drop": "^3.1.6",
+    "react-hook-form": "^7.43.0",
+    "slugify": "^1.6.5",
+    "tinybase": "^3.0.1"
+  },
+  "scripts": {
+    "prep": "rimraf ./dist/ && mkdirp ./dist && copyfiles -f public/* dist",
+    "dev": "yarn prep && node ./scripts/esbuild.client.dev.mjs",
+    "build": "yarn prep && node ./scripts/esbuild.client.prod.mjs",
+    "serve:prod": "yarn dlx http-serve dist/"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "browserslist": "^4.21.5",
+    "copyfiles": "^2.4.1",
+    "esbuild": "^0.17.8",
+    "esbuild-plugin-browserslist": "^0.7.0",
+    "esbuild-sass-plugin": "^2.4.5",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "mkdirp": "^2.1.3",
+    "rimraf": "^4.1.2"
+  }
+}
