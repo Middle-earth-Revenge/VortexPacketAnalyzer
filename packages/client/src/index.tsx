@@ -1,6 +1,5 @@
 import { createRoot } from 'react-dom/client';
 import React from 'react';
-import NiceModal from '@ebay/nice-modal-react';
 
 import App from './App';
 

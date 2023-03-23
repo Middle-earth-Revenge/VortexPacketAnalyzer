@@ -1,6 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
-  createStore, createLocalPersister, Store, Persister, Queries, createQueries,
+  createStore,
+  createLocalPersister,
+  Store,
+  Persister,
+  Queries,
+  createQueries,
+  createRemotePersister,
 } from 'tinybase';
 
 import TinybaseContext, { TTinybaseContext } from './TinybaseContext';
@@ -8,6 +14,7 @@ import TinybaseContext, { TTinybaseContext } from './TinybaseContext';
 type TTinybaseState = {
   store: Store | undefined,
   persister: Persister | undefined,
+  remotePersister: Persister | undefined,
   queries: Queries | undefined,
   autoSaveReady: boolean,
   tinybaseReady: boolean,
@@ -17,6 +24,7 @@ function TinybaseProvider({ children }: { children: React.ReactNode }) {
   const [tinybaseState, setTinybaseState] = useState<TTinybaseState>({
     store: undefined,
     persister: undefined,
+    remotePersister: undefined,
     queries: undefined,
     autoSaveReady: false,
     tinybaseReady: false,
@@ -26,7 +34,9 @@ function TinybaseProvider({ children }: { children: React.ReactNode }) {
     const { tinybaseReady } = tinybaseState;
 
     const setupTinybase = async () => {
-      let { store, persister, queries } = tinybaseState;
+      let {
+        store, persister, remotePersister, queries,
+      } = tinybaseState;
 
       if (!store) {
         store = createStore();
@@ -58,12 +68,21 @@ function TinybaseProvider({ children }: { children: React.ReactNode }) {
         persister = createLocalPersister(store, 'vortexPacketAnalyzer');
       }
 
+      if (!remotePersister) {
+        remotePersister = createRemotePersister(store, 'http://localhost:8001/load', 'http://localhost:8001/save', 60);
+      }
+
       await persister.load();
       await persister.startAutoSave();
+
+      await remotePersister.load();
+      await remotePersister.startAutoSave();
+      await remotePersister.startAutoLoad();
 
       setTinybaseState({
         store,
         persister,
+        remotePersister,
         queries,
         autoSaveReady: true,
         tinybaseReady: true,
