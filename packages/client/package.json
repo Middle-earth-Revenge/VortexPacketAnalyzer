@@ -1,4 +1,5 @@
 {
+  "name": "client",
   "dependencies": {
     "@ebay/nice-modal-react": "^1.2.8",
     "@picocss/pico": "^1.5.7",

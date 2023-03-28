@@ -1,7 +1,9 @@
 {
+  "name": "server",
   "scripts": {
     "prep": "rimraf ./dist/ && mkdirp ./dist",
-    "dev": "yarn prep && node ./scripts/esbuild.server.dev.mjs && node ./dist/index.js"
+    "dev": "yarn prep && node ./scripts/esbuild.server.dev.mjs && node ./dist/index.js",
+    "build": "yarn prep && node ./scripts/esbuild.server.prod.mjs"
   },
   "dependencies": {
     "@hapi/hapi": "^21.3.0",

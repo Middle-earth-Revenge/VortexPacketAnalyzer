@@ -1586,9 +1586,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"client-66101c@workspace:packages/client":
+"client@workspace:packages/client":
   version: 0.0.0-use.local
-  resolution: "client-66101c@workspace:packages/client"
+  resolution: "client@workspace:packages/client"
   dependencies:
     "@ebay/nice-modal-react": ^1.2.8
     "@picocss/pico": ^1.5.7
@@ -4550,21 +4550,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"root-workspace-0b6124@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "root-workspace-0b6124@workspace:."
-  dependencies:
-    "@typescript-eslint/eslint-plugin": ^5.13.0
-    "@typescript-eslint/parser": ^5.0.0
-    esbuild: ^0.17.8
-    eslint: ^8.33.0
-    eslint-config-airbnb: ^19.0.4
-    eslint-config-airbnb-base: ^15.0.0
-    eslint-config-airbnb-typescript: ^17.0.0
-    typescript: ^4.9.5
-  languageName: unknown
-  linkType: soft
-
 "run-parallel@npm:^1.1.9":
   version: 1.2.0
   resolution: "run-parallel@npm:1.2.0"
@@ -4662,9 +4647,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"server-045915@workspace:packages/server":
+"server@workspace:packages/server":
   version: 0.0.0-use.local
-  resolution: "server-045915@workspace:packages/server"
+  resolution: "server@workspace:packages/server"
   dependencies:
     "@es-exec/esbuild-plugin-serve": ^0.0.4
     "@hapi/hapi": ^21.3.0
@@ -5134,6 +5119,21 @@ __metadata:
   checksum: 474acf1146cb2701fe3b074892217553dfcf9a031280919ba1b8d651a068c9b15d863b7303cb15bd00a862b498e6cf4ad7b4a08fb134edd5a6f7641681cb54a2
   languageName: node
   linkType: hard
+
+"vortexpacketanalyzer@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "vortexpacketanalyzer@workspace:."
+  dependencies:
+    "@typescript-eslint/eslint-plugin": ^5.13.0
+    "@typescript-eslint/parser": ^5.0.0
+    esbuild: ^0.17.8
+    eslint: ^8.33.0
+    eslint-config-airbnb: ^19.0.4
+    eslint-config-airbnb-base: ^15.0.0
+    eslint-config-airbnb-typescript: ^17.0.0
+    typescript: ^4.9.5
+  languageName: unknown
+  linkType: soft
 
 "which-boxed-primitive@npm:^1.0.2":
   version: 1.0.2
