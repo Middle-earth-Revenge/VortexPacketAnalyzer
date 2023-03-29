@@ -20,6 +20,9 @@ type TTinybaseState = {
   tinybaseReady: boolean,
 };
 
+const API_SERVER = process.env.NODE_ENV === 'production' ? window.location.host : 'localhost:8001';
+const API_PATH = process.env.NODE_ENV === 'production' ? 'api' : '';
+
 function TinybaseProvider({ children }: { children: React.ReactNode }) {
   const [tinybaseState, setTinybaseState] = useState<TTinybaseState>({
     store: undefined,
@@ -69,7 +72,7 @@ function TinybaseProvider({ children }: { children: React.ReactNode }) {
       }
 
       if (!remotePersister) {
-        remotePersister = createRemotePersister(store, 'http://localhost:8001/load', 'http://localhost:8001/save', 60);
+        remotePersister = createRemotePersister(store, `//${API_SERVER}/${API_PATH}/load`, `//${API_SERVER}/${API_PATH}/save`, 60);
       }
 
       await persister.load();
